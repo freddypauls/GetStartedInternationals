@@ -1,0 +1,80 @@
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+#loginError {
+	display: none;
+}
+
+/*** !important was needed for snippet ***/
+
+
+
+/* label focus color */
+ .input-field input + label {
+   color: darkblue !important;
+ }
+ /* label underline focus color */
+ .row .input-field input {
+   border-bottom: 1px solid darkblue !important;
+   box-shadow: 0 1px 0 0 darkblue !important
+ }
+
+/* label focus color */
+ .input-field input:focus + label {
+   color: orange !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid orange !important;
+   box-shadow: 0 1px 0 0 orange !important;
+ }
+
+/* label focus color */
+ .input-field textarea + label {
+   color: darkblue !important;
+ }
+ /* label underline focus color */
+ .row .input-field textarea {
+   border-bottom: 1px solid darkblue !important;
+   box-shadow: 0 1px 0 0 darkblue !important;
+ }
+
+/* label focus color */
+ .input-field textarea:focus + label {
+   color: orange !important;
+ }
+ /* label underline focus color */
+ .row .input-field textarea:focus {
+   border-bottom: 1px solid orange !important;
+   box-shadow: 0 1px 0 0 orange !important;
+ }
+
+
+.logo-margin {
+    margin-left: 20px;
+    
+}
+
+.navbar-leftSideNav-margin {
+    margin-right: 30px;
+		margin-left: 30px;
+    
+}
+
+.row .bottom-margin {
+	margin-bottom: 0px !important;
+	
+}
+
+.fixed-position {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
