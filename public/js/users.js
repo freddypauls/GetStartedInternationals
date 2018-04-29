@@ -8,13 +8,6 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-firebase.auth().onAuthStateChanged(function(user) {
-  
-	$name = firebase.auth().currentUser.displayName;
-	console.log($name);
-	
-});
-
 $("#signOut").click(
 	function(){
 		

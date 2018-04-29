@@ -53,7 +53,7 @@
 													<div class="card-content white-text">
 															<span class="card-title black-text">Login</span>
 															<p class="black-text" id="loginError">Error</p>
-															<!--<div class="row">
+																<div class="row">
 																<div class="input-field col s12">
 																	<input id="loginEmail" type="email" class="validate">
 																	<label for="loginEmail">Email</label>
@@ -63,12 +63,11 @@
 																<div class="input-field col s12">
 																	<input id="loginPassword" type="password" class="validate">
 																	<label for="loginPassword">Password</label>
-																</div>-->
+																</div>
 															</div>
 															<div class="card-action right-align">
-																<!--	<a class="btn waves-effect white orange-text z-depth-0" href="register.html">Register</a>
-																	<button id="loginBtn" class="btn waves-effect white black-text z-depth-0" type="submit" name="action">Login</button>-->
-																	<button id="anonLoginBtn" class="btn waves-effect grey black-text z-depth-0" type="submit" name="action">Anonymous Login</button>
+																<a class="btn waves-effect white orange-text z-depth-0" href="register.html">Register</a>
+																	<button id="loginBtn" class="btn waves-effect white black-text z-depth-0" type="submit" name="action">Login</button>
 
 															</div>
 
@@ -102,18 +101,19 @@
         <!-- Leave out Storage -->
         <!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-storage.js"></script> -->
       
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyBd43yxfQwojP9zG6k02by6tHkE5H5Ys64",
-            authDomain: "imt3673-labassignment4.firebaseapp.com",
-            databaseURL: "https://imt3673-labassignment4.firebaseio.com",
-            projectId: "imt3673-labassignment4",
-            storageBucket: "imt3673-labassignment4.appspot.com",
-            messagingSenderId: "833213271359"
-          };
-          firebase.initializeApp(config);
-        </script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+				<script>
+					// Initialize Firebase
+					var config = {
+						apiKey: "AIzaSyAUekaRrU3SL10IZedEqlDwaAvHvVXnZrc",
+						authDomain: "getstartedinternationals-1467c.firebaseapp.com",
+						databaseURL: "https://getstartedinternationals-1467c.firebaseio.com",
+						projectId: "getstartedinternationals-1467c",
+						storageBucket: "getstartedinternationals-1467c.appspot.com",
+						messagingSenderId: "1090125215826"
+					};
+					firebase.initializeApp(config);
+				</script>
 
 		<!-- Materialize Javascript (for materialize css design framework) -->
 		<script type="text/javascript" src="js/materialize.min.js"></script>

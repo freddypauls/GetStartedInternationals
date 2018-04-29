@@ -1,5 +1,5 @@
 //click listener on the sign up button
-$('#regNick').click(function() {
+$('').click(function() {
 
 	$uid = firebase.auth().currentUser.uid;
 	$uname = $('#nickName').val();
@@ -32,7 +32,7 @@ $('#regNick').click(function() {
 		} 
 		else {
 			alert("That user already exists");
-			console.log('User with username: ' + $uname + " already exists!")
+			console.log("User with username: " + $uname + " already exists!")
 		}
 	});
 	//checks if the function get get username works if it does you have succesfully logged in
