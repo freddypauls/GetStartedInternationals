@@ -1,14 +1,11 @@
 
 // add message function
 function addItem(itm) {
-
+		
+	if(itm.status == "Available"){
 			//creates html elemets to be displayed with database data
-			var itmUsernameElement = document.createElement("b");
-			itmUsernameElement.textContent = itm.owner;
-			itmUsernameElement.className="black-text";
-
-			var itmNameElement = document.createElement("p");
-			itmNameElement.textContent = "Name: " + itm.name;
+			var itmNameElement = document.createElement("b");
+			itmNameElement.textContent = itm.name;
 			itmNameElement.className="black-text";
 	
 			var itmAmountElement = document.createElement("p");
@@ -20,7 +17,6 @@ function addItem(itm) {
 			itmTypeElement.className="black-text";
 	
 			var theItmElement = document.createElement("div");
-			theItmElement.appendChild(itmUsernameElement);
 			theItmElement.appendChild(itmNameElement);
 			theItmElement.appendChild(itmAmountElement);
 			theItmElement.appendChild(itmTypeElement);
@@ -40,6 +36,7 @@ function addItem(itm) {
 
 
 			document.getElementById("displayItemDiv").appendChild(colItmElement);
+	}
 }
 
 // Runs when user adds to database
