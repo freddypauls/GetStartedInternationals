@@ -23,6 +23,10 @@ main {
   	right: 20px; 
 }
 
+.card-margin {
+	margin: 0px;
+}
+
 /* label focus color */
  .input-field input + label {
    color: darkblue !important;

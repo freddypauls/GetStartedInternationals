@@ -31,19 +31,26 @@ function addItem(itm) {
 			itmElement.appendChild(theItmElement);
 			
 
-			itmElement.className = "card white";
+			itmElement.className = "card white card-margin";
+	
+			var colItmElement = document.createElement("div");
+			colItmElement.appendChild(itmElement);
+	
+			colItmElement.className = "col s12 m4";
 
 
-			document.getElementById("displayItemDiv").appendChild(itmElement);
+			document.getElementById("displayItemDiv").appendChild(colItmElement);
 }
 
 // Runs when user adds to database
    var startListening = function() {
       var now = moment();
       firebase.database().ref().child('items').on('child_added', function(snapshot) {
-       var itm = snapshot.val();
-       // Sends notifications to all users
-       addItem(itm)
+      var itm = snapshot.val();
+			
+			addItem(itm);
+       
+			// Sends notifications to all users 
       if(itm.date) {
          var datetime = moment(itm.date);
          var user = firebase.auth().currentUser;
