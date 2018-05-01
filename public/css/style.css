@@ -7,6 +7,9 @@ body {
 main {
 	flex: 1 0 auto;
 }
+.container{
+	margin-top: 1em;
+}
 
 #loginError, #regError {
 	display: none;
