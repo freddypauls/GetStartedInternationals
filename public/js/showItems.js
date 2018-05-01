@@ -44,7 +44,6 @@ function addItem(itm) {
 
 // Runs when user adds to database
    var startListening = function() {
-		 
 	  var now = moment();
 	  firebase.database().ref().child('items').on('child_added', function(snapshot) {
 	  $('#loadingCircle').hide();
