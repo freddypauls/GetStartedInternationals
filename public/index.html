@@ -1,0 +1,100 @@
+<html>
+    <head>
+				<!--Import Google Icon Font-->
+				<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+				<!--Import materialize.css-->
+				<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+				<!--Jquery and UI-->
+				<script src="jquery-ui/external/jquery/jquery.js"></script>
+				<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+				<link rel="stylesheet" href="jquery-ui/jquery-ui.structure.min.css">
+				<link rel="stylesheet" href="jquery-ui/jquery-ui.theme.min.css">
+				<script src="jquery-ui/jquery-ui.min.js"></script>
+			
+				<!-- Moment.js -->
+				<script src="js/moment.js"></script>
+
+				<!-- Personal css -->
+				<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+				<!--Let browser know website is optimized for mobile-->
+				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+ 		<!-- Navigation -->
+		<header>
+			<nav>
+				<div class="nav-wrapper blue darken-4">
+					<a href="index.html" class="brand-logo">GSI</a>
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="index.html">Board</a></li>
+						<li><a href="users.html">Users</a></li>
+						<li><a id="signOut" class="signOutSelector">Sign Out</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<ul class="sidenav" id="mobile-demo">
+				<li><a href="index.html">Board</a></li>
+				<li><a href="users.html">Users</a></li>
+				<hr>
+				<li><a id="signOut" class="signOutSelector">Sign Out</a></li>
+			</ul>
+		</header>
+    	
+    	<!-- Main content -->
+     	<main>
+			<div class="container">
+				<div class="row">
+					<div class="col m2 l2"></div>
+					<div class="col s12 m8 l8">
+						<a href="javascript:;" id="dnperm">Set on notifications</a>
+					</div>
+					<div class="col m2 l2"></div>
+				</div>
+			</div>
+		</main>
+
+		<!--<div class="right-align btnDiv">-->
+		<a href="registerItem.html" class="btn-floating btn-large waves-effect waves-light orange regItemBtn"><i class="material-icons">add</i></a>
+		<!--</div>-->
+		
+			
+		<!-- Footer -->
+		<footer>
+		</footer>
+     
+      
+      	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-functions.js"></script>
+
+        <!-- Leave out Storage -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-storage.js"></script> -->
+      
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+
+		<!-- Materialize Javascript (for materialize css design framework) -->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$('textarea#userMsg').characterCounter();
+			});
+			$(document).ready(function(){
+				$('.sidenav').sidenav();
+			})
+		</script>
+    
+    	<!-- Personal javascript -->
+    	<script type="text/javascript" src="js/signOut.js"></script>
+    	<script type="text/javascript" src="js/index.js"></script>
+    </body>
+  </html>
