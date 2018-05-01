@@ -20,6 +20,17 @@ function addItem(itm) {
       crossButton.textContent="clear";
       crossButton.className="small material-icons right";
 
+      //Adds delete function to clear icon
+      crossButton.onclick=function delOnClick(){
+        var firebaseRef = firebase.database().ref("items/" + itm.itemid);
+        firebaseRef.remove().then(function(){
+          console.log("remove suceeded " + itm.itemid);
+          location.reload();
+        }).catch(function(error){
+          console.log("remove failed: " + error.message);
+        })
+      };
+
 			var theItmElement = document.createElement("div");
 			theItmElement.appendChild(itmNameElement);
 			theItmElement.appendChild(itmAmountElement);
@@ -73,7 +84,9 @@ function addItem(itm) {
 		 }
 	   }
 	 });
-   }
+  }
+
+
 
    // Begin listening for data
    startListening();
