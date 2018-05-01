@@ -17,7 +17,11 @@ main {
 
 /*** !important was needed for snippet ***/
 
-
+.regItemBtn {
+	position: fixed;
+  bottom: 20px;
+  right: 20px; 
+}
 
 /* label focus color */
  .input-field input + label {
