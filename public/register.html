@@ -42,23 +42,31 @@
 						<div class="card white">
 							<div class="card-content white-text">
 								<span class="card-title black-text">Register</span>
-									<form>
-										<p class="error" id="regError"></p>
-										<div class="row">
-											<div class="input-field col s12">
-													<input id="regName" type="text" class="validate">
-													<label for="regName">Name</label>
-											</div>
-											<div class="input-field col s12">
-													<input id="regEmail" type="text" class="validate">
-													<label for="regEmail">Email</label>
-											</div>
-											<div class="input-field col s12">
-													<input id="regPassword" type="password" class="validate">
-													<label for="regPassword">Password</label>
-											</div>
+								<form>
+									<p class="error" id="regError"></p>
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="regName" type="text" class="validate">
+											<label for="regName">Name</label>
 										</div>
-									</form>
+										<div class="input-field col s12">
+											<input id="regEmail" type="text" class="validate">
+											<label for="regEmail">Email</label>
+										</div>
+										<div class="input-field col s12">
+											<input id="regPassword" type="password" class="validate">
+											<label for="regPassword">Password</label>
+										</div>
+										<div class="input-field col s12">
+											<select name="regType" id="regType">
+												<option value="" disabled="" selected="">Select user type</option>
+												<option value="Arrving">Arriving Student</option>
+												<option value="Departing">Departing Student</option>
+											</select>
+											<label for="regType">Select user type</label>
+										</div>
+									</div>
+								</form>
 								<div class="card-action">
 									<button id="regBtn" class="btn waves-effect white black-text z-depth-0" type="submit" name="action">Register</button>
 								</div>
@@ -98,5 +106,7 @@
     
     	<!-- Personal javascript -->
     	<script type="text/javascript" src="js/register.js"></script>
+
+    	<script type="text/javascript"> M.AutoInit();</script>
     </body>
   </html>
