@@ -23,6 +23,10 @@ main {
   	right: 20px; 
 }
 
+.loadingClass{
+
+}
+
 /* label focus color */
  .input-field input + label {
    color: darkblue !important;
