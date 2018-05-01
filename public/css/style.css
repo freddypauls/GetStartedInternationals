@@ -12,6 +12,16 @@ main {
 	margin-top: 1em;
 }
 
+.itemImageClass{
+	width: 100% !important;
+	height: 100px !important;
+}
+
+.reserveButton{
+	float: right;
+	bottom: 5px !important;
+}
+
 #loginError, #regError {
 	display: none;
 }

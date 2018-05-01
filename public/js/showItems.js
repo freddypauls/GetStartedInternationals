@@ -3,6 +3,22 @@
 function addItem(itm) {
 		
 	if(itm.status == "Available"){
+			
+
+			var theImage = document.createElement('img');
+			theImage.setAttribute('src', 'images/'+ itm.type +'.jpg');
+			theImage.setAttribute('alt','Image of '+ itm.type);
+			theImage.className="itemImageClass";
+
+			var theItemTitle = document.createElement('span');
+			theItemTitle.className="card-title black-text";
+			theItemTitle.textContent = itm.name;
+
+			var theItemTop = document.createElement("div");
+			theItemTop.className = "card-image";
+			theItemTop.appendChild(theImage);
+			theItemTop.appendChild(theItemTitle);
+
 			//creates html elemets to be displayed with database data
 			var itmNameElement = document.createElement("b");
 			itmNameElement.textContent = itm.name;
@@ -15,11 +31,23 @@ function addItem(itm) {
 			var itmTypeElement = document.createElement("p");
 			itmTypeElement.textContent = "Type: " + itm.type;
 			itmTypeElement.className="black-text";
-	
+
+			var theButton = document.createElement('a');
+			theButton.className = "reserveButton waves-effect waves-light btn";
+			theButton.id = 'reserveButton';
+			theButton.textContent = "Reserve";
+			theButton.setAttribute('value', itm.itemid);
+
+			var theItemEnd = document.createElement('div');
+			theItemEnd.className = 'card-action';
+			theItemEnd.appendChild(theButton);
+
 			var theItmElement = document.createElement("div");
+			theItmElement.appendChild(theItemTop);
 			theItmElement.appendChild(itmNameElement);
 			theItmElement.appendChild(itmAmountElement);
 			theItmElement.appendChild(itmTypeElement);
+			theItmElement.appendChild(theItemEnd);
 			theItmElement.className = "card-content";
 	
 
@@ -27,7 +55,7 @@ function addItem(itm) {
 			itmElement.appendChild(theItmElement);
 			
 
-			itmElement.className = "card white card-margin";
+			itmElement.className = "card white";
 	
 			var colItmElement = document.createElement("div");
 			colItmElement.appendChild(itmElement);
