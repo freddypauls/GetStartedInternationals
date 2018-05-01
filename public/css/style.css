@@ -18,8 +18,6 @@ main {
 }
 
 .reserveButton{
-	
-
 }
 
 #loginError, #regError {
@@ -30,12 +28,16 @@ main {
 	  color: #D32F2F !important;
 }
 
+.crossUsersAdmin {
+	padding: 15px 0px 15px 0px;
+}
+
 /*** !important was needed for snippet ***/
 
 .regItemBtn {
 	position: fixed;
   	bottom: 20px;
-  	right: 20px; 
+  	right: 20px;
 }
 
 .loadingClass{
@@ -66,6 +68,7 @@ main {
  .input-field textarea + label {
    color: darkblue !important;
  }
+
  /* label underline focus color */
  .row .input-field textarea {
    border-bottom: 1px solid darkblue !important;
@@ -76,27 +79,24 @@ main {
  .input-field textarea:focus + label {
    color: orange !important;
  }
+
  /* label underline focus color */
  .row .input-field textarea:focus {
    border-bottom: 1px solid orange !important;
    box-shadow: 0 1px 0 0 orange !important;
  }
 
-
 .logo-margin {
 	margin-left: 20px;
-	
 }
 
 .navbar-leftSideNav-margin {
 	margin-right: 30px;
 		margin-left: 30px;
-	
 }
 
 .row .bottom-margin {
 	margin-bottom: 0px !important;
-	
 }
 
 .fixed-position {

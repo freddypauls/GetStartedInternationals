@@ -24,19 +24,58 @@ $("#signOut").click(
 // Runs when user adds to database
  var startListening = function() {
 
-
 		//On message added
 		firebase.database().ref().child('users').on('child_added', function(snapshot) {
 		 var user = snapshot.val();
-     console.log(user);
 
 		 //creates html elemets to be displayed with database data
-		 var usernameElement = document.createElement("b");
+		 var usernameElement = document.createElement("td");
 		 usernameElement.textContent = user.username;
 		 usernameElement.className = "";
 
-		 var msgElement = document.createElement("div");
+     //creates html elemets to be displayed with database data
+		 var emailElement = document.createElement("td");
+		 emailElement.textContent = user.userType;
+		 emailElement.className = "";
+
+     var crossButton = document.createElement("i");
+     crossButton.textContent="clear";
+     crossButton.className="small material-icons right crossUsersAdmin";
+
+     // Delete user
+     crossButton.onclick=function delOnClick(){
+
+
+    var userAuth = firebase.auth().user.username;
+
+    console.log(userAuth);
+    /*
+    user.delete().then(function() {
+      // User deleted.
+    }).catch(function(error) {
+      // An error happened.
+    });
+
+
+
+       var firebaseRef = firebase.database().ref("users/" + user.username);
+       firebaseRef.remove().then(function(){
+         console.log("remove suceeded " + user.username);
+         location.reload();
+       }).catch(function(error){
+         console.log("remove failed: " + error.message);
+       })
+
+         */
+     };
+
+		 var msgElement = document.createElement("tr");
+
 		 msgElement.appendChild(usernameElement);
+     msgElement.appendChild(emailElement);
+      msgElement.appendChild(crossButton);
+
+     document.getElementById("userList").appendChild(msgElement);
 
 		});
  }
