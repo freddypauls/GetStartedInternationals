@@ -33,26 +33,28 @@ function addItem(itm) {
 			itmTypeElement.className="black-text";
 
 			var theButton = document.createElement('a');
-			theButton.className = "reserveButton waves-effect waves-light btn";
+			theButton.className = "reserveButton waves-effect waves-light btn modal-trigger";
 			theButton.id = 'reserveButton';
 			theButton.textContent = "Reserve";
 			theButton.setAttribute('value', itm.itemid);
+			theButton.setAttribute('data-target', 'confirmModal');
+			theButton.setAttribute('onclick','reserveItem("'+itm.itemid+'");')
 
 			var theItemEnd = document.createElement('div');
 			theItemEnd.className = 'card-action';
 			theItemEnd.appendChild(theButton);
 
 			var theItmElement = document.createElement("div");
-			theItmElement.appendChild(theItemTop);
 			theItmElement.appendChild(itmNameElement);
 			theItmElement.appendChild(itmAmountElement);
 			theItmElement.appendChild(itmTypeElement);
-			theItmElement.appendChild(theItemEnd);
 			theItmElement.className = "card-content";
 	
 
 			var itmElement = document.createElement("div");
+			itmElement.appendChild(theItemTop);
 			itmElement.appendChild(theItmElement);
+			itmElement.appendChild(theItemEnd);
 			
 
 			itmElement.className = "card white";
@@ -71,30 +73,31 @@ function addItem(itm) {
    var startListening = function() {
 	  var now = moment();
 	  firebase.database().ref().child('items').on('child_added', function(snapshot) {
-	  $('#loadingCircle').hide();
-	  var itm = snapshot.val();
-	  addItem(itm);
-	  // Sends notifications to all users
-	  if(itm.date) {
-		var datetime = moment(itm.date);
-	 	var user = firebase.auth().currentUser;
-	 	var u = user.displayName;
-	 	var isafter = datetime.isAfter(now);
-	 	if(datetime.isAfter(now) && user.displayName != itm.uname) {
-		   	if(Notification.permission !== 'default') {
-		 	notify = new Notification('New Item', {
-		   		'body': 'Some one just posted a item in the GSI app',
-			   	'tag': '1234'
-		 	});
-		 	notify.onclick = function() {
-				window.location = '?item=' + this.tag;
-		 	}
-		   } else {
-			 alert("Please click on request permission link before acessing this link!");
+		  $('#loadingCircle').hide();
+		  var itm = snapshot.val();
+		  addItem(itm);
+		  // Sends notifications to all users
+		  if(itm.date) {
+			var datetime = moment(itm.date);
+		 	var user = firebase.auth().currentUser;
+		 	var u = user.displayName;
+		 	var isafter = datetime.isAfter(now);
+		 	if(datetime.isAfter(now) && user.displayName != itm.uname) {
+			   	if(Notification.permission !== 'default') {
+			 	notify = new Notification('New Item', {
+			   		'body': 'Some one just posted a item in the GSI app',
+				   	'tag': '1234'
+			 	});
+			 	notify.onclick = function() {
+					window.location = '?item=' + this.tag;
+			 	}
+			   } else {
+				 alert("Please click on request permission link before acessing this link!");
+			   }
+			 }
 		   }
-		 }
-	   }
 	 });
+
    }
 
    // Begin listening for data
