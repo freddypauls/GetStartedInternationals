@@ -81,9 +81,10 @@
 							<div class="card-content white-text">
 								<span class="card-title black-text">Register an item</span>
 								<p class="error" id="itemError"></p>
+								<form action="javascript:registerItem();">
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="itemName" type="text" class="validate">
+										<input id="itemName" type="text" class="validate" required>
 										<label for="itemName">Name</label>
 									</div>
 								</div>
@@ -104,13 +105,14 @@
 								</div>
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="itemAmount" type="number" class="validate" min="1">
+										<input id="itemAmount" type="number" class="validate" min="1" required>
 										<label for="itemAmount">Amount</label>
 									</div>
 								</div>
 								<div class="card-action right-align">
 									<button id="itemButton" class="btn waves-effect white orange-text z-depth-0" type="submit" name="action">Register item</button>
 								</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -135,6 +137,7 @@
 		<script type="text/javascript" src="js/init.js"></script>
 
 		<!-- Personal javascript -->
+		<script type="text/javascript" src="js/signOut.js"></script>
 		<script type="text/javascript" src="js/registerItem.js"></script>
 		<script type="text/javascript"> M.AutoInit();</script>
 	</body>
