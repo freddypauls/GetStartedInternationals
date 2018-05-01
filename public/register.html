@@ -46,19 +46,23 @@
 									<p class="error" id="regError"></p>
 									<div class="row">
 										<div class="input-field col s12">
-											<input id="regName" type="text" class="validate">
+											<input id="regName" type="text" class="validate" required>
 											<label for="regName">Name</label>
 										</div>
 										<div class="input-field col s12">
-											<input id="regEmail" type="text" class="validate">
+											<input id="regEmail" type="text" class="validate" required>
 											<label for="regEmail">Email</label>
 										</div>
 										<div class="input-field col s12">
-											<input id="regPassword" type="password" class="validate">
+											<input id="regPassword" type="password" class="validate" required>
 											<label for="regPassword">Password</label>
 										</div>
 										<div class="input-field col s12">
-											<select name="regType" id="regType">
+											<input id="regPasswordComf" type="password" class="validate" required>
+											<label for="regPasswordComf">Comfirm password</label>
+										</div>
+										<div class="input-field col s12">
+											<select name="regType" id="regType" required>
 												<option value="" disabled="" selected="">Select user type</option>
 												<option value="Arrving">Arriving Student</option>
 												<option value="Departing">Departing Student</option>
@@ -105,6 +109,21 @@
 		<script type="text/javascript" src="js/materialize.min.js"></script>
     
     	<!-- Personal javascript -->
+    	<script type="text/javascript">var password = document.getElementById("regPassword");
+var confirm_password = document.getElementById("regPasswordComf");
+
+function validatePassword(){
+	if(password.value != confirm_password.value) {
+		confirm_password.setCustomValidity("Passwords Don't Match");
+		return false;
+	} else {
+		confirm_password.setCustomValidity('');
+		return true;
+	}
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;</script>
     	<script type="text/javascript" src="js/register.js"></script>
 
     	<script type="text/javascript"> M.AutoInit();</script>
