@@ -8,8 +8,11 @@ main {
 	flex: 1 0 auto;
 }
 
-#loginError {
+#loginError, #regError {
 	display: none;
+}
+.error{
+	  color: #D32F2F !important;
 }
 
 /*** !important was needed for snippet ***/
@@ -58,14 +61,14 @@ main {
 
 
 .logo-margin {
-    margin-left: 20px;
-    
+	margin-left: 20px;
+	
 }
 
 .navbar-leftSideNav-margin {
-    margin-right: 30px;
+	margin-right: 30px;
 		margin-left: 30px;
-    
+	
 }
 
 .row .bottom-margin {

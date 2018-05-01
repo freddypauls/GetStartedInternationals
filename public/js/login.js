@@ -6,10 +6,11 @@ $("#loginBtn").click(
 
 		if(email != "" && password != ""){
 			
-			firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
-				
-				$("#loginError").show().text(error.message);
-								
+			firebase.auth().signInWithEmailAndPassword(email, password)
+			.then(function(){
+				window.location.replace('index.html');
+			}).catch(function(error){
+				$("#loginError").show().text(error.message);				
 			});
 			
 		}

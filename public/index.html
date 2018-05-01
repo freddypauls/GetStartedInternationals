@@ -32,7 +32,7 @@
 							<ul class="right hide-on-med-and-down">
 								<li><a href="index.html">Board</a></li>
 								<li><a href="users.html">Users</a></li>
-								<li><a id="signOut">Sign Out</a></li>
+								<li><a id="signOut" class="signOutSelector">Sign Out</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -41,7 +41,7 @@
 						<li><a href="index.html">Board</a></li>
 						<li><a href="users.html">Users</a></li>
 						<hr>
-						<li><a id="signOut">Sign Out</a></li>
+						<li><a id="signOut" class="signOutSelector">Sign Out</a></li>
 					</ul>
 				</header>
     	
@@ -101,21 +101,11 @@
         <!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-storage.js"></script> -->
       
         <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-				<script>
-					// Initialize Firebase
-					var config = {
-						apiKey: "AIzaSyAUekaRrU3SL10IZedEqlDwaAvHvVXnZrc",
-						authDomain: "getstartedinternationals-1467c.firebaseapp.com",
-						databaseURL: "https://getstartedinternationals-1467c.firebaseio.com",
-						projectId: "getstartedinternationals-1467c",
-						storageBucket: "getstartedinternationals-1467c.appspot.com",
-						messagingSenderId: "1090125215826"
-					};
-					firebase.initializeApp(config);
-				</script>
+		<script type="text/javascript" src="js/init.js"></script>
 
 		<!-- Materialize Javascript (for materialize css design framework) -->
 		<script type="text/javascript" src="js/materialize.min.js"></script>
+		
 		<script>
 			$(document).ready(function() {
 				$('textarea#userMsg').characterCounter();
