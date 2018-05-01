@@ -48,7 +48,8 @@
 
     	<!-- Main content -->
      	<main>
-				<!-- Chat content div -->
+
+				<!-- Users content div -->
 				<div class="container">
 					<div class="row">
 						<div class="col s12">
@@ -56,6 +57,25 @@
 						</div>
 					</div>
 				</div>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Select Usertype</h4>
+          <div class="input-field col s12">
+            <form>
+              <select id="selectedValue">
+                <option value="Arrival">Arrival</option>
+                <option value="Leaving">Leaving</option>
+              </select>
+          </form>
+        <br><br>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <a id="editUsertype" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
 
 				<!-- printing users -->
 				<div class="container">
@@ -76,8 +96,8 @@
 		<footer class="page-footer grey darken-2">
 			<div class="footer-copyright grey darken-3">
 				<div class="container">
-				© 2018 Copyright -- Fredrik Paulsen, Henrik Snilsberg, Mats Gundersen
-				<a class="grey-text text-lighten-4 right" href="#!">--</a>
+				© 2018 Copyright
+				<a class="grey-text text-lighten-4 right" href="#!"></a>
 				</div>
 			</div>
 		</footer>
@@ -110,12 +130,23 @@
 		<!-- Materialize Javascript (for materialize css design framework) -->
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 		<script>
+
+
 			$(document).ready(function(){
 				$('.sidenav').sidenav();
 			})
+
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+
 		</script>
-
-
 
     	<!-- Personal javascript -->
     	<script type="text/javascript" src="js/usersAdmin.js"></script>

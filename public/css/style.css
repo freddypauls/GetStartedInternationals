@@ -32,6 +32,10 @@ main {
 	padding: 15px 0px 15px 0px;
 }
 
+.modalEdit {
+	margin-top: 7px;
+}
+
 /*** !important was needed for snippet ***/
 
 .regItemBtn {

@@ -31,14 +31,25 @@
        })
      };
 
-      var editButton = document.createElement("i");
+    //  var editButton = document.createElement("i");
+    //  editButton.textContent="edit";
+    //  editButton.className="tiny material-icons right crossUsersAdmin";
+
+      var editButton = document.createElement("a");
       editButton.textContent="edit";
-      editButton.className="tiny material-icons right crossUsersAdmin";
+      editButton.className="waves-effect waves-light btn modal-trigger modalEdit";
+      editButton.setAttribute('href', "#modal1");
+
+      var updateModal = document.getElementById("editUsertype");
 
       // Delete user onclick function
-      editButton.onclick=function editOnClick(){
+      updateModal.onclick=function editOnClick(){
       const fb = firebase.database().ref();
-      var userType = 'Arriving';
+      var selectedValue = $("#selectedValue option:selected").text();
+
+      $("#selectedValue option:selected").text();
+
+      var userType = selectedValue;
       userType = {userType}
 
       console.log( fb.child('users/'+ user.userType));
