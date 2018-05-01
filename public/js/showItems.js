@@ -44,33 +44,33 @@ function addItem(itm) {
 
 // Runs when user adds to database
    var startListening = function() {
-      var now = moment();
-      firebase.database().ref().child('items').on('child_added', function(snapshot) {
-      var itm = snapshot.val();
-			
-			addItem(itm);
-       
-			// Sends notifications to all users 
-      if(itm.date) {
-         var datetime = moment(itm.date);
-         var user = firebase.auth().currentUser;
-         var u = user.displayName;
-         var isafter = datetime.isAfter(now);
-         if(datetime.isAfter(now) && user.displayName != itm.uname) {
-           if(Notification.permission !== 'default') {
-             notify = new Notification('New Item', {
-               'body': 'Some one just posted a item in the GSI app',
-               'tag': '1234'
-             });
-             notify.onclick = function() {
-               window.location = '?item=' + this.tag;
-             }
-           } else {
-             alert("Please click on request permission link before acessing this link!");
-           }
-         }
-       }
-     });
+		 
+	  var now = moment();
+	  firebase.database().ref().child('items').on('child_added', function(snapshot) {
+	  $('#loadingCircle').hide();
+	  var itm = snapshot.val();
+	  addItem(itm);
+	  // Sends notifications to all users
+	  if(itm.date) {
+		var datetime = moment(itm.date);
+	 	var user = firebase.auth().currentUser;
+	 	var u = user.displayName;
+	 	var isafter = datetime.isAfter(now);
+	 	if(datetime.isAfter(now) && user.displayName != itm.uname) {
+		   	if(Notification.permission !== 'default') {
+		 	notify = new Notification('New Item', {
+		   		'body': 'Some one just posted a item in the GSI app',
+			   	'tag': '1234'
+		 	});
+		 	notify.onclick = function() {
+				window.location = '?item=' + this.tag;
+		 	}
+		   } else {
+			 alert("Please click on request permission link before acessing this link!");
+		   }
+		 }
+	   }
+	 });
    }
 
    // Begin listening for data
