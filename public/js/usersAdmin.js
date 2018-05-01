@@ -11,16 +11,15 @@
 		 usernameElement.textContent = user.username;
 		 usernameElement.className = "";
 
-     //creates html elemets to be displayed with database data
 		 var emailElement = document.createElement("td");
 		 emailElement.textContent = user.userType;
 		 emailElement.className = "";
 
      var crossButton = document.createElement("i");
      crossButton.textContent="clear";
-     crossButton.className="small material-icons right crossUsersAdmin";
+     crossButton.className="tiny material-icons right crossUsersAdmin";
 
-     // Delete user
+     // Delete user onclick function
      crossButton.onclick=function delOnClick(){
 
        var firebaseRef = firebase.database().ref("users/" + user.username);
@@ -32,11 +31,30 @@
        })
      };
 
+      var editButton = document.createElement("i");
+      editButton.textContent="edit";
+      editButton.className="tiny material-icons right crossUsersAdmin";
+
+      // Delete user onclick function
+      editButton.onclick=function editOnClick(){
+      const fb = firebase.database().ref();
+      var userType = 'Arriving';
+      userType = {userType}
+
+      console.log( fb.child('users/'+ user.userType));
+     fb.child('users/' + user.username).update(userType);
+     location.reload();
+
+      };
+
+
+
 		 var usersElement = document.createElement("tr");
 
 		usersElement.appendChild(usernameElement);
     usersElement.appendChild(emailElement);
     usersElement.appendChild(crossButton);
+    usersElement.appendChild(editButton);
 
     document.getElementById("userList").appendChild(usersElement);
 
