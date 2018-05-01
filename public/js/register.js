@@ -4,14 +4,56 @@ $("#regBtn").click(
 		var email = $("#regEmail").val();
 		var password = $("#regPassword").val();
 		var name = $("#regName").val();
+		var userType = $("#regType").val();
+
 		
 
 		if(email != "" && password != "" && name != ""){
 
 			firebase.auth().createUserWithEmailAndPassword(email, password)
 			.then(function() {
+
+
+
+
 				firebase.auth().signInWithEmailAndPassword(email, password)
 				.then(function(){
+
+					firebase.database().ref().child('users').once('value', function(snapshot) {
+					if (!snapshot.hasChild(name)) {
+						$uid = firebase.auth().currentUser.uid;
+						console.log('User created!');
+						
+						//puts the new user into the database
+						firebase.database().ref().child('users').child(name).set({
+							uid: $uid,
+							username: name,
+							email: email,
+							userType: userType
+						});
+						
+						$user = firebase.auth().currentUser;
+						
+						$user.updateProfile({
+							displayName: $uname,
+						}).then(function() {
+							// Update successful.
+						}).catch(function(error) {
+							// An error happened.
+						});
+						
+						$username = firebase.auth().currentUser.displayName;
+						console.log($username);
+
+						//takes you to the chat view
+						document.location.href = "index.html";
+					} 
+					else {
+						alert("That user already exists");
+						console.log("User with username: " + $uname + " already exists!")
+					}
+				});
+					
 					var user = firebase.auth().currentUser;
 					
 					user.updateProfile({displayName: name})
