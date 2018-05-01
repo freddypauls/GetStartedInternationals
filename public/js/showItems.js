@@ -31,10 +31,15 @@ function addItem(itm) {
 			itmElement.appendChild(theItmElement);
 			
 
-			itmElement.className = "card white";
+			itmElement.className = "card white card-margin";
+	
+			var colItmElement = document.createElement("div");
+			colItmElement.appendChild(itmElement);
+	
+			colItmElement.className = "col s12 m4";
 
 
-			document.getElementById("displayItemDiv").appendChild(itmElement);
+			document.getElementById("displayItemDiv").appendChild(colItmElement);
 }
 
 // Runs when user adds to database
