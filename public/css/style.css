@@ -7,6 +7,7 @@ body {
 main {
 	flex: 1 0 auto;
 }
+
 .container{
 	margin-top: 1em;
 }
@@ -14,6 +15,7 @@ main {
 #loginError, #regError {
 	display: none;
 }
+
 .error{
 	  color: #D32F2F !important;
 }
@@ -25,7 +27,6 @@ main {
   	bottom: 20px;
   	right: 20px; 
 }
-
 
 .loadingClass{
 
