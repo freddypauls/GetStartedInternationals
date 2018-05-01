@@ -30,16 +30,16 @@
 					<a href="index.html" class="brand-logo">GSI</a>
 					<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="index.html">Board</a></li>
-						<li><a href="users.html">Users</a></li>
+						<li><a href="index.html">Find Items</a></li>
+						<li><a href="Profile.html">Profile</a></li>
 						<li><a id="signOut" class="signOutSelector">Sign Out</a></li>
 					</ul>
 				</div>
 			</nav>
 
 			<ul class="sidenav" id="mobile-demo">
-				<li><a href="index.html">Board</a></li>
-				<li><a href="users.html">Users</a></li>
+				<li><a href="index.html">Find Items</a></li>
+				<li><a href="Profile.html">Profile</a></li>
 				<hr>
 				<li><a id="signOut" class="signOutSelector">Sign Out</a></li>
 			</ul>
@@ -83,6 +83,18 @@
 		<footer>
 		</footer>
 
+		<!-- Modal Structure -->
+		<div id="confirmModal" class="modal">
+			<div class="modal-content">
+				<h4>Confirm reservation</h4>
+				<p>Are you sure you want to reserve this item?</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="modalClose" onclick="modalChoice(false);">Close</a>
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="modalAgree" onclick="modalChoice(true);">Agree</a>
+			</div>
+		</div>
+
 
       	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
@@ -113,5 +125,8 @@
     	<script type="text/javascript" src="js/signOut.js"></script>
     	<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/showItems.js"></script>
+		<script type="text/javascript" src="js/reserveItem.js"></script>
+
+		<script type="text/javascript"> M.AutoInit();</script>
     </body>
   </html>

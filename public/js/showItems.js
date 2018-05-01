@@ -33,26 +33,27 @@ function addItem(itm) {
 			itmTypeElement.className="black-text";
 
 			var theButton = document.createElement('a');
-			theButton.className = "reserveButton waves-effect waves-light btn";
+			theButton.className = "reserveButton waves-effect waves-light btn modal-trigger";
 			theButton.id = 'reserveButton';
 			theButton.textContent = "Reserve";
 			theButton.setAttribute('value', itm.itemid);
+			theButton.setAttribute('data-target', 'confirmModal');
 
 			var theItemEnd = document.createElement('div');
 			theItemEnd.className = 'card-action';
 			theItemEnd.appendChild(theButton);
 
 			var theItmElement = document.createElement("div");
-			theItmElement.appendChild(theItemTop);
 			theItmElement.appendChild(itmNameElement);
 			theItmElement.appendChild(itmAmountElement);
 			theItmElement.appendChild(itmTypeElement);
-			theItmElement.appendChild(theItemEnd);
 			theItmElement.className = "card-content";
 	
 
 			var itmElement = document.createElement("div");
+			itmElement.appendChild(theItemTop);
 			itmElement.appendChild(theItmElement);
+			itmElement.appendChild(theItemEnd);
 			
 
 			itmElement.className = "card white";
