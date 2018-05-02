@@ -39,7 +39,7 @@ function deleteItem(item){
 	 	$deleteFunction = "deleteItem('"+item.itemid+"')";
 
 		if(item.reserved_by == firebase.auth().currentUser.displayName){
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td><i class="small material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 			
 			$("#myReservationsList").append($displayThis);
 
