@@ -47,10 +47,11 @@ Ahmed S. M. Madhun is offering this project for mobile development course studen
 
 ## How code is organized
 Root - Has all the firebase files, pluss a folder(Public) where all web-files are located
-- Public - Contains all the html files and other folders
+- Public - Contains all the html files,manifest.json and other folders
   - css - contains all the cascading style sheet files 
   - js - contains all the javascript files
   - images - contains all the images used for items
+  	- icons - contains all the icons for fabicon and icon on mobile devices
   - jquery-ui - contains all the jquery-ui files aswell as jquery
     
 ## Logins and serverside
