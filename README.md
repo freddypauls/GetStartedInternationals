@@ -3,9 +3,9 @@ Can be accessed [HERE](https://getstartedinternationals-1467c.firebaseapp.com/)
 
 ## Authors
 
-* Henrik Reff Snilsberg
-* Fredik Paulsen
-* Mats Gundersen
+* [Henrik Reff Snilsberg](https://github.com/HSnils)
+* [Mats Gundersen](https://github.com/matsgund)
+* [Fredrik Paulsen](https://github.com/freddypauls)
 
 ## Background
 
