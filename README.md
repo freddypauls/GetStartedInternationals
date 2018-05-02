@@ -55,12 +55,12 @@ Root - Has all the firebase files, pluss a folder(Public) where all web-files ar
     
 ## Logins and serverside
 To access the admin account use:
-Email: getstartedinternationals@gmail.com
-Password: admingsi123
+**Email:** getstartedinternationals@gmail.com
+**Password:** admingsi123
 
 To access the firebase backend/console use:
-Email: getstartedinternationals@gmail.com
-Password: thiscanbechangedlater
+**Email:** getstartedinternationals@gmail.com
+**Password:** thiscanbechangedlater
     
 ## Installation instructions
 Clone the repository to a folder of your choice
