@@ -54,18 +54,18 @@ Root - Has all the firebase files, pluss a folder(Public) where all web-files ar
   - jquery-ui - contains all the jquery-ui files aswell as jquery
     
 ## Logins and serverside
-To access the admin account use:
-**Email:** getstartedinternationals@gmail.com
-**Password:** admingsi123
+To access the admin account use:<br />
+**Email:** getstartedinternationals@gmail.com<br />
+**Password:** admingsi123<br />
 
-To access the firebase backend/console use:
-**Email:** getstartedinternationals@gmail.com
+To access the firebase backend/console use:<br />
+**Email:** getstartedinternationals@gmail.com<br />
 **Password:** thiscanbechangedlater
     
 ## Installation instructions
 Clone the repository to a folder of your choice
 
-Download node.js [LINK](https://nodejs.org/en/) and select LTS (Recommended for most users)
+Download node.js [LINK](https://nodejs.org/en/) and select LTS (Recommended for most users)<br />
 Download Firebase CLI [LINK](https://firebase.google.com/docs/cli/)
 
 Use cmd and navigate to the folder and run the command to run the server locally
