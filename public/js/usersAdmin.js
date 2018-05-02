@@ -5,11 +5,11 @@
 		//On message added
 		firebase.database().ref().child('users').on('child_added', function(snapshot) {
 		 var user = snapshot.val();
-			
+
 		 //creates html elemets to be displayed with database data
 		 var fill = document.createElement("p");
-		 fill.textContent = "";	
-		
+		 fill.textContent = "";
+
 		 var usernameElement = document.createElement("td");
 		 usernameElement.textContent = user.username;
 		 usernameElement.className = "";
@@ -20,7 +20,7 @@
 
 		 var crossButton = document.createElement("i");
 		 crossButton.textContent="clear";
-		 crossButton.className="tiny material-icons right crossUsersAdmin";
+		 crossButton.className="tiny material-icons left crossUsersAdmin";
 
 		 // Delete user onclick function
 		 crossButton.onclick=function delOnClick(){
@@ -69,6 +69,11 @@
       };
 
 		var usersElement = document.createElement("tr");
+    var editButtonElement = document.createElement("td");
+    var crossButtonElement = document.createElement("td");
+
+    editButtonElement.appendChild(editButton);
+    crossButtonElement.appendChild(crossButton);
 
 		usersElement.appendChild(usernameElement);
 		usersElement.appendChild(emailElement);
@@ -77,8 +82,9 @@
 		 usersElement.appendChild(fill);
 	 }
 	 else {
-		usersElement.appendChild(crossButton);
-		usersElement.appendChild(editButton);
+    usersElement.appendChild(editButtonElement);
+		usersElement.appendChild(crossButtonElement);
+
 	}
       document.getElementById("userList").appendChild(usersElement);
 	});
