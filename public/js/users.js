@@ -75,38 +75,3 @@ $("#signOut").click(
 
  // Begin listening for data
  startListening();
-
-
-
-/*
-// add message function
-function printUser(user) {
-
-			 //creates html elemets to be displayed with database data
-			 var usernameElement = document.createElement("b");
-			 usernameElement.textContent = user.username;
-			 usernameElement.className="black-text";
-
-			 var hrMsgElement = document.createElement("hr");
-			 
-			 var msgElement = document.createElement("div");
-			 msgElement.appendChild(usernameElement);
-			 msgElement.appendChild(hrMsgElement);
-
-			 msgElement.className = "container";
-
-			 document.getElementById("showUsers").appendChild(msgElement);
-}
-
-   // Runs when user adds to database
-   var startListening = function() {
-		 
-      firebase.database().ref().child('users').on('child_added', function(snapshot) {
-       var user = snapshot.val();
-       // Sends notifications to all users
-       printUser(user)
-     });
-   }
-
-   // Begin listening for data
-   startListening();*/

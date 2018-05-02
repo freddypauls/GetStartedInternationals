@@ -1,3 +1,8 @@
+/**
+ * [reserveItem reservs an item for user]
+ * @param  {[id]} item [item id]
+ * @return {[type]}      [reservs the item for the user]
+ */
 function reserveItem(item){
 	$itemID = item;
 	console.log($itemID);

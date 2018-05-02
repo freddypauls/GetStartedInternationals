@@ -1,5 +1,5 @@
 
-// add message function
+// add item function
 function addItem(itm) {
 
 	if(itm.status == "Available"){

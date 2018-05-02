@@ -1,3 +1,9 @@
+
+/**
+ * [deleteItem reverts an item from reserved to availible]
+ * @param  {[id]} item [id of item]
+ * @return {[type]}      [sets the item status back to Availible and clears the reserved by values ]
+ */
 function deleteItem(item){
 	$itemID = item;
 	console.log($itemID);

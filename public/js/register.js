@@ -1,5 +1,11 @@
+
+/**
+ * [register user]
+ * @param  {[type]} ){		if(validatePassword()){		var email         [description]
+ * @return {[type]}                                    [description]
+ */
 $("#regBtn").click(function(){
-		if(validatePassword()){
+	if(validatePassword()){
 		var email = $("#regEmail").val();
 		var password = $("#regPassword").val();
 		var name = $("#regName").val();

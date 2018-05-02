@@ -1,3 +1,7 @@
+/**
+ * [registerItem registers a new item]
+ * @return {[type]} [adds item to database]
+ */
 function registerItem(){
 	$name = $('#itemName').val();
 	$type = $('#itemType').val();
@@ -6,6 +10,7 @@ function registerItem(){
 	$dateNow = new Date();
 	$formatDate = $dateNow.getDate() + '/' + ($dateNow.getMonth()+1) + '/' + $dateNow.getFullYear() + ' ' + $dateNow.getHours() + ":" + $dateNow.getMinutes() + ':' + $dateNow.getSeconds();
 	$user = firebase.auth().currentUser;
+	
 	//creates item id with userID and a random number
 	$itemID = $user.uid + Math.round(Math.random()*1000000000);
 
