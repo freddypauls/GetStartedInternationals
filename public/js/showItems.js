@@ -12,7 +12,7 @@ function addItem(itm) {
 			theImage.className="itemImageClass";
 
 			var theItemTitle = document.createElement('span');
-			theItemTitle.className="card-title black-text";
+			theItemTitle.className="card-title strokeme";
 			theItemTitle.textContent = itm.name;
 
 			var theItemTop = document.createElement("div");

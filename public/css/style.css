@@ -8,6 +8,16 @@ main {
 	flex: 1 0 auto;
 }
 
+.strokeme
+{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
 .container{
 	margin-top: 1em;
 }
