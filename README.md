@@ -1,6 +1,7 @@
 # GetStartedInternationals
-Can be accessed [HERE](https://getstartedinternationals-1467c.firebaseapp.com/) 
-##Authors
+Can be accessed [HERE](https://getstartedinternationals-1467c.firebaseapp.com/)
+
+## Authors
 
 * Henrik Reff Snilsberg
 * Fredik Paulsen
