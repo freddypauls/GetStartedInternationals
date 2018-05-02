@@ -15,6 +15,10 @@ main {
 	padding: 0.4em !important;
 }
 
+.crossBtnStyle:hover {
+	color: red;
+}
+
 .container{
 	margin-top: 1em;
 }
