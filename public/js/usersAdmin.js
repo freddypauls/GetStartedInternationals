@@ -20,7 +20,7 @@
 
 		 var crossButton = document.createElement("i");
 		 crossButton.textContent="clear";
-		 crossButton.className="tiny material-icons left crossUsersAdmin";
+		 crossButton.className="small material-icons left crossUsersAdmin";
 
 		 // Delete user onclick function
 		 crossButton.onclick=function delOnClick(){
