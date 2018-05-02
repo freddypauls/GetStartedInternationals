@@ -18,5 +18,8 @@
 			"sizes": "192x192"
 		}
 	],
-	"start_url": "index.html?launcher=true"
+	"start_url": "index.html?launcher=true",
+	"background_color": "#283593",
+	"display": "standalone",
+	"orientation": "portrait"
 }
