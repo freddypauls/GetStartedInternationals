@@ -3,9 +3,9 @@ Can be accessed [HERE](https://getstartedinternationals-1467c.firebaseapp.com/)
 
 ## Authors
 
-* Henrik Reff Snilsberg
-* Fredik Paulsen
-* Mats Gundersen
+* [Henrik Reff Snilsberg](https://github.com/HSnils)
+* [Mats Gundersen](https://github.com/matsgund)
+* [Fredrik Paulsen](https://github.com/freddypauls)
 
 ## Background
 
@@ -54,18 +54,22 @@ Root - Has all the firebase files, pluss a folder(Public) where all web-files ar
   - jquery-ui - contains all the jquery-ui files aswell as jquery
     
 ## Logins and serverside
-To access the admin account use:
-**Email:** getstartedinternationals@gmail.com
-**Password:** admingsi123
+To access the admin account use:<br />
+**Email:** getstartedinternationals@gmail.com<br />
+**Password:** admingsi123<br />
 
-To access the firebase backend/console use:
-**Email:** getstartedinternationals@gmail.com
+To access the firebase backend/console use:<br />
+**Email:** getstartedinternationals@gmail.com<br />
 **Password:** thiscanbechangedlater
     
 ## Installation instructions
 Clone the repository to a folder of your choice
 
-Download firebase CLI LINK HERE
+Download node.js  and select LTS (Recommended for most users)<br />
+[Download node.js here](https://nodejs.org/en/)<br />
+
+Download Firebase CLI <br />
+[Download Firebase CLI here](https://firebase.google.com/docs/cli/)
 
 Use cmd and navigate to the folder and run the command to run the server locally
 ```
