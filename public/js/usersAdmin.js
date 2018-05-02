@@ -24,8 +24,19 @@
 
        var firebaseRef = firebase.database().ref("users/" + user.username);
        firebaseRef.remove().then(function(){
-         console.log("remove suceeded " + user.username);
-         location.reload();
+         console.log("removal of user from database succeded " + user.username);
+
+         var user = firebase.auth().currentUser;
+
+            user.delete().then(function() {
+              // User deleted.
+              console.log("removal of user authentication succeded " + user.username);
+              location.reload();
+            }).catch(function(error) {
+              // An error happened.
+              console.log("remove authentication failed: " + error.message);
+            });
+         
        }).catch(function(error){
          console.log("remove failed: " + error.message);
        })
