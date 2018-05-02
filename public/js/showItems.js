@@ -4,9 +4,10 @@ function addItem(itm) {
 		
 	if(itm.status == "Available"){
 			
-
+	  		var img = itm.type.replace(/\s+/g, "_");
+	  		
 			var theImage = document.createElement('img');
-			theImage.setAttribute('src', 'images/'+ itm.type +'.jpg');
+			theImage.setAttribute('src', 'images/'+ img +'.jpg');
 			theImage.setAttribute('alt','Image of '+ itm.type);
 			theImage.className="itemImageClass";
 
