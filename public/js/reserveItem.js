@@ -1,16 +1,3 @@
-$reserveButtons = $(".reserveButton")
-$reserveButtons.click(function(){
-
-	$itemID = this.getAttribute('value');
-	console.log('clicked');
-	console.log(this.getAttribute('value'));
-
-	$("#modalAgree").click(function(){
-		//do reservation
-		console.log('Agreed to book');
-	});
-});
-
 function reserveItem(item){
 	$itemID = item;
 	console.log($itemID);

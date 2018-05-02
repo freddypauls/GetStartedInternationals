@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <html>
-    <head>
+	<head>
 				<!--Import Google Icon Font-->
 				<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 				<!--Import materialize.css-->
@@ -21,10 +21,10 @@
 
 				<!--Let browser know website is optimized for mobile-->
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+	</head>
 
-    <body>
-     		<!-- Navigation -->
+	<body>
+			<!-- Navigation -->
 				<header>
 			<nav>
 				<div class="nav-wrapper blue darken-4">
@@ -48,53 +48,90 @@
 			</ul>
 		</header>
 
-    	<!-- Main content -->
-     	<main>
-
-				<!-- Users content div -->
-				<div class="container">
-					<div class="row">
-						<div class="col s12">
-							<h4>Manage users</h4>
-						</div>
+		<!-- Main content -->
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h4>Manage item status</h4>
+						<a href="#pending">Pending items</a>
+						<a href="#reserved">Reserved items</a>
+						<a href="#delivered">Delivered items</a>
+					</div>
+				</div>
+			</div>
+			<!-- Items content div -->
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h4 id="pending">Pending items</h4>
 					</div>
 				</div>
 
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Select Usertype</h4>
-          <div class="input-field col s12">
-            <form>
-              <select id="selectedValue">
-                <option value="Arrival">Arrival</option>
-                <option value="Leaving">Leaving</option>
-              </select>
-          </form>
-        <br><br>
-      </div>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-          <a id="editUsertype" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Change</a>      
-        </div>
-      </div>
+				<table class="responsive-table striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Type</th>
+							<th>Owner</th>
+							<th>Listed at</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody id="pendingList">
+					</tbody>
+				</table>
+			</div>
 
-				<!-- printing users -->
-				<div class="container">
-          <table class="responsive-table striped">
-            <thead>
-              <tr>
-                  <th>Name</th>
-                  <th>Usertype</th>
-                  <th></th>
-              </tr>
-            </thead>
-            <tbody id="userList">
-            </tbody>
-          </table>
-			</main>
+			<!-- Users content div -->
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h4 id="reserved">Reserved items</h4>
+					</div>
+				</div>
 
+				<table class="responsive-table striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Type</th>
+							<th>Reserved by</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody id="reservedList">
+					</tbody>
+				</table>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h4 id="delivered">Delivered items</h4>
+					</div>
+				</div>
+
+				<table class="responsive-table striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Type</th>
+							<th>Reserved by</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody id="deliveredList">
+					</tbody>
+				</table>
+			</div>
+		</main>
+<br>
 		<!-- Footer -->
 		<footer class="page-footer grey darken-2">
 			<div class="footer-copyright grey darken-3">
@@ -104,6 +141,29 @@
 				</div>
 			</div>
 		</footer>
+
+
+
+			  <!-- Modal Structure -->
+		<div id="modalReserved" class="modal">
+		<div class="modal-content">
+		  <h4>Change reserved status</h4>
+		  <div class="input-field col s12">
+		  	<p> Change either to delivered, or back to avalible </p>
+			<form>
+			  <select id="selectedReservedValue">
+				<option value="Available">Available</option>
+				<option value="Delivered">Delivered</option>
+			  </select>
+		  </form>
+		<br><br>
+		</div>
+		</div>
+		<div class="modal-footer">
+		  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		  <a id="editReservedStatus" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Change</a>      
+		</div>
+		</div>
 
 
 		<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
@@ -144,7 +204,7 @@
 
 		</script>
 
-    	<!-- Personal javascript -->
-    	<script type="text/javascript" src="js/usersAdmin.js"></script>
-    </body>
+		<!-- Personal javascript -->
+		<script type="text/javascript" src="js/itemStatus.js"></script>
+	</body>
   </html>
