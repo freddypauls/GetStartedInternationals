@@ -47,37 +47,28 @@
 
     	<!-- Main content -->
      	<main>
+			<!-- Items content div -->
 			<div class="container">
 				<div class="row">
-					<div class="col m1 l1"></div>
-					<div class="col s12 m10 l10">
-
-						<!--	<a href="javascript:;" id="dnperm">Set on notifications</a> -->
-						<div class="preloader-wrapper big active loadingClass" id="loadingCircle">
-							<div class="spinner-layer spinner-blue-only">
-								<div class="circle-clipper left">
-									<div class="circle"></div>
-								</div>
-								<div class="gap-patch">
-									<div class="circle"></div>
-								</div>
-								<div class="circle-clipper right">
-									<div class="circle"></div>
-								</div>
-							</div>
-						</div>
-						<div id="displayItemDiv" class="row"></div>
-
+					<div class="col s12">
+						<h4 id="">My reservations</h4>
 					</div>
-					<div class="col m1 l1"></div>
 				</div>
+
+				<table class="responsive-table striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Amount</th>
+							<th>Type</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody id="myReservationsList">
+					</tbody>
+				</table>
 			</div>
 		</main>
-
-		<!--<div class="right-align btnDiv">-->
-		<a href="registerItem.html" class="btn-floating btn-large waves-effect waves-light orange regItemBtn"><i class="material-icons">add</i></a>
-		<!--</div>-->
-
 
 		<!-- Footer -->
 		<footer>
@@ -86,8 +77,8 @@
 		<!-- Modal Structure -->
 		<div id="confirmModal" class="modal">
 			<div class="modal-content">
-				<h4>Confirm reservation</h4>
-				<p>Are you sure you want to reserve this item?</p>
+				<h4>Remove reservation</h4>
+				<p>Are you sure you want to remove this reservation?</p>
 			</div>
 			<div class="modal-footer">
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="modalClose">Close</a>
@@ -112,20 +103,9 @@
 		<!-- Materialize Javascript (for materialize css design framework) -->
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 
-		<script>
-			$(document).ready(function() {
-				$('textarea#userMsg').characterCounter();
-			});
-			$(document).ready(function(){
-				$('.sidenav').sidenav();
-			})
-		</script>
-
     	<!-- Personal javascript -->
     	<script type="text/javascript" src="js/signOut.js"></script>
-    	<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/showItems.js"></script>
-		<script type="text/javascript" src="js/reserveItem.js"></script>
+		<script type="text/javascript" src="js/myReservations.js"></script>
 
 		<script type="text/javascript"> M.AutoInit();</script>
     </body>

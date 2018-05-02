@@ -20,6 +20,14 @@ main {
 .reserveButton{
 }
 
+.crossAdmin{
+	cursor: pointer;
+}
+.crossAdmin:hover{
+	color: #D32F2F ;
+}
+
+
 #loginError, #regError {
 	display: none;
 }

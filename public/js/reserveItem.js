@@ -20,7 +20,8 @@ function reserveItem(item){
 				});
 				
 				
-				M.toast({html: 'Item reserved!'})
+				M.toast({html: 'Item reserved!'});
+				location.reload();
 			} else {
 
 				M.toast({html: 'That item does not exist!'})
