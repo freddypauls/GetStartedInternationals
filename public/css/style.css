@@ -51,6 +51,10 @@ main {
 	padding: 15px 0px 15px 0px;
 }
 
+.crossUsersAdmin:hover {
+	color: red;
+}
+
 .modalEdit {
 	margin-top: 7px;
 }
