@@ -144,25 +144,38 @@
 
 
 
-			  <!-- Modal Structure -->
+	  	<!-- Modal Structure -->
+		<div id="modalPending" class="modal">
+			<div class="modal-content">
+			  	<h4>Approve item</h4>
+			  	<div class="input-field col s12">
+			  		<p> Are you sure you want to approve this item and make it avalible?</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+				<a id="editPendingStatus" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Change</a>      
+			</div>
+		</div>
+
 		<div id="modalReserved" class="modal">
-		<div class="modal-content">
-		  <h4>Change reserved status</h4>
-		  <div class="input-field col s12">
-		  	<p> Change either to delivered, or back to avalible </p>
-			<form>
-			  <select id="selectedReservedValue">
-				<option value="Available">Available</option>
-				<option value="Delivered">Delivered</option>
-			  </select>
-		  </form>
-		<br><br>
-		</div>
-		</div>
-		<div class="modal-footer">
-		  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-		  <a id="editReservedStatus" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Change</a>      
-		</div>
+			<div class="modal-content">
+			  	<h4>Change reserved status</h4>
+			  	<div class="input-field col s12">
+			  		<p> Change either to delivered, or back to avalible </p>
+					<form>
+			 			<select id="selectedReservedValue">
+							<option value="Available">Available</option>
+							<option value="Delivered">Delivered</option>
+				  		</select>
+		  			</form>
+					<br><br>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+				<a id="editReservedStatus" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Change</a>      
+			</div>
 		</div>
 
 
