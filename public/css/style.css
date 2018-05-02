@@ -11,8 +11,11 @@ main {
 .strokeme
 {
     color: white;
-	background-color: rgba(0,0,0,0.5); 
-	padding: 0.4em !important;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
 }
 
 .container{
@@ -26,14 +29,6 @@ main {
 
 .reserveButton{
 }
-
-.crossAdmin{
-	cursor: pointer;
-}
-.crossAdmin:hover{
-	color: #D32F2F ;
-}
-
 
 #loginError, #regError {
 	display: none;
