@@ -5,19 +5,21 @@
 	firebase.database().ref().child('items').on('child_added', function(snapshot) {
 	 	var item = snapshot.val();
 	 	console.log(item);
+	 	$deleteFunction = "deleteItem('"+item.itemid+"')";
+
 		if(item.status == 'Pending'){
 			$function = "approveItem('"+item.itemid+"')";
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.owner+'</td><td>'+item.created_at+'</td><td><a href="#modalPending" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.owner+'</td><td>'+item.created_at+'</td><td><a href="#modalPending" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 			$("#pendingList").append($displayThis);
 
 		} else if(item.status == 'Reserved'){
 			$function = "changeReservedStatus('"+item.itemid+"')";
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><a href="#modalReserved" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><a href="#modalReserved" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 		
 			$("#reservedList").append($displayThis);
 		} else if(item.status == 'Delivered'){
 			$function = "changeReservedStatus('"+item.itemid+"')";
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><a href="#modalReserved" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><a href="#modalReserved" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 		
 			$("#deliveredList").append($displayThis);
 		}
@@ -64,11 +66,26 @@
 	});
  }
 
- function approveItem(item){
+function deleteItem(item){
 	$itemID = item;
 	console.log($itemID);
 
-	$(".modalAgree").click(function(){
+	$databaseItem = firebase.database().ref().child('items/'+$itemID);
+	$databaseItem.remove().then(function(){
+		console.log('Item deleted!');
+		M.toast({html: 'Item deleted!'});
+		location.reload();
+	}).catch(function(error){
+     	console.log("Deletion failed: " + error.message);
+     	M.toast({html: 'Failed to delete!'});
+	})
+}
+
+function approveItem(item){
+	$itemID = item;
+	console.log($itemID);
+
+	$("#editPendingStatus").click(function(){
 		//do reservation
 		console.log('Agreed to book');
 
@@ -83,7 +100,8 @@
 					status: 'Available',
 				});
 				
-				M.toast({html: 'Item approved!'})
+				M.toast({html: 'Item now avalible!'})
+				location.reload();
 			} else {
 
 				M.toast({html: 'That item does not exist!'})
@@ -118,6 +136,7 @@ function changeReservedStatus(item){
 				
 				
 				M.toast({html: 'Item changed!'})
+				location.reload();
 			} else {
 
 				M.toast({html: 'That item does not exist!'})
