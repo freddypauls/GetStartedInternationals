@@ -11,7 +11,7 @@
 		if(item.status == 'Pending'){
 			//Function to be printen in $displayThis
 			$function = "approveItem('"+item.itemid+"')";
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.owner+'</td><td>'+item.created_at+'</td><td><a href="#modalPending" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.owner+'</td><td>'+item.created_at+'</td><td><a href="#modalPending" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="small material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 			
 			//adds new row with item
 			$("#pendingList").append($displayThis);
@@ -19,7 +19,7 @@
 		} else if(item.status == 'Reserved'){
 			//Function to be printen in $displayThis
 			$function = "changeReservedStatus('"+item.itemid+"')";
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><a href="#modalReserved" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><a href="#modalReserved" class="waves-effect waves-light btn modal-trigger modalEdit" onclick="'+$function+'">Edit</a></td><td><i class="small material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 			
 			//adds new row with item
 			$("#reservedList").append($displayThis);
@@ -27,7 +27,7 @@
 		} else if(item.status == 'Delivered'){
 			//Function to be printen in $displayThis
 			$function = "changeReservedStatus('"+item.itemid+"')";
-			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><i class="tiny material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
+			$displayThis = '<tr><td>'+item.name+'</td><td>'+item.amount+'</td><td>'+item.type+'</td><td>'+item.reserved_by+'</td><td><i class="small material-icons crossAdmin" onclick="'+$deleteFunction+'">clear</i></td></tr>';
 		
 			//adds new row with item
 			$("#deliveredList").append($displayThis);
@@ -96,7 +96,7 @@ function approveItem(item){
 /**
  * [changeReservedStatus approves an item]
  * @param  {[id]} item [the id of an item]
- * @return {[]}      [sets the status of an item to the selected status from popup (Availible or Delivered) and reloads]
+ * @return {[]}      [sets the status of an item to the selected status from popup (Availible or Deliveredsmall) and reloads]
  */
 function changeReservedStatus(item){
 
