@@ -4,6 +4,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 		console.log("Hello admin");
 	} else {
 		// not admin
-		document.location.href = "login.html";
+		document.location.href = "index.html";
 	}
 });
