@@ -65,7 +65,8 @@ To access the firebase backend/console use:
 ## Installation instructions
 Clone the repository to a folder of your choice
 
-Download firebase CLI LINK HERE
+Download node.js [LINK](https://nodejs.org/en/) and select LTS (Recommended for most users)
+Download Firebase CLI [LINK](https://firebase.google.com/docs/cli/)
 
 Use cmd and navigate to the folder and run the command to run the server locally
 ```
