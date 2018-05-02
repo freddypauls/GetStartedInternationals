@@ -31,10 +31,6 @@
        })
      };
 
-    //  var editButton = document.createElement("i");
-    //  editButton.textContent="edit";
-    //  editButton.className="tiny material-icons right crossUsersAdmin";
-
       var editButton = document.createElement("a");
       editButton.textContent="edit";
       editButton.className="waves-effect waves-light btn modal-trigger modalEdit";
@@ -42,7 +38,7 @@
 
       var updateModal = document.getElementById("editUsertype");
 
-      // Delete user onclick function
+      // Edit usertype onclick function
       updateModal.onclick=function editOnClick(){
       const fb = firebase.database().ref();
       var selectedValue = $("#selectedValue option:selected").text();
@@ -58,16 +54,14 @@
 
       };
 
-
-
 		 var usersElement = document.createElement("tr");
 
-		usersElement.appendChild(usernameElement);
-    usersElement.appendChild(emailElement);
-    usersElement.appendChild(crossButton);
-    usersElement.appendChild(editButton);
+  		usersElement.appendChild(usernameElement);
+      usersElement.appendChild(emailElement);
+      usersElement.appendChild(crossButton);
+      usersElement.appendChild(editButton);
 
-    document.getElementById("userList").appendChild(usersElement);
+      document.getElementById("userList").appendChild(usersElement);
 
 		});
  }
