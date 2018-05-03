@@ -7,8 +7,10 @@
 		 var user = snapshot.val();
 
 		 //creates html elemets to be displayed with database data
-		 var fill = document.createElement("p");
+		 var fill = document.createElement("td");
 		 fill.textContent = "";
+			var fill2 = document.createElement("td");
+		 fill2.textContent = "";
 
 		 var usernameElement = document.createElement("td");
 		 usernameElement.textContent = user.username;
@@ -79,7 +81,7 @@
 		usersElement.appendChild(emailElement);
 	 if(user.userType == "Admin"){
 		 usersElement.appendChild(fill);
-		 usersElement.appendChild(fill);
+		 usersElement.appendChild(fill2);
 	 }
 	 else {
     usersElement.appendChild(editButtonElement);
